@@ -1,0 +1,13 @@
+@use './../../scss/abstracts/' as *;
+
+.header {
+  background-color: $black;
+}
+
+.headerLogo {
+  @include padding(3, y);
+  @include margin(5, l);
+  @include mq(sm) {
+    @include margin(0);
+  }
+}

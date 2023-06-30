@@ -1,0 +1,25 @@
+@use './../../scss/abstracts/' as *;
+
+.grid {
+  display: grid;
+  @include margin(8, x);
+  @include gap(8);
+  @include grid-cols(1);
+
+  @include mq(sm) {
+    @include grid-cols(2);
+  }
+
+  @include mq(md) {
+    @include margin(0, x);
+    @include grid-cols(3);
+  }
+
+  @include mq(lg) {
+    @include grid-cols(4);
+  }
+
+  @include mq(xl) {
+    @include grid-cols(5);
+  }
+}

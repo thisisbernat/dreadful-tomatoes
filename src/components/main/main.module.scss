@@ -1,0 +1,18 @@
+@use './../../scss/abstracts/' as *;
+
+.main {
+  @include padding(4, y);
+  flex: 1 1 0%;
+  background-color: $slate;
+}
+
+.title {
+  @include margin(5, b);
+  @include margin(8, l);
+  @include text(3xl);
+  @include font(semibold);
+
+  @include mq(md) {
+    @include margin(0, left);
+  }
+}

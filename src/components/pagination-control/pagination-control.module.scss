@@ -1,0 +1,47 @@
+@use './../../scss/abstracts/' as *;
+@use 'sass:color';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include margin(10, y);
+  gap: space(3);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  @include text(lg);
+  width: space(10);
+  height: space(10);
+}
+
+.numberBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: space(10);
+  height: space(10);
+  border-radius: 9999px;
+}
+
+.active {
+  background-color: red;
+}
+
+.inactive {
+  background-color: transparentize(red, 0.4);
+}
+
+.chevronBtn {
+  @include font(black);
+  @include text(3xl);
+}
+
+.chevronImage {
+  height: space(7);
+  width: auto;
+}

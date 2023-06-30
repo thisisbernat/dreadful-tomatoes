@@ -1,0 +1,46 @@
+@use './scss/abstracts' as *;
+@use 'sass:color';
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: space(72);
+  @include gap(10);
+}
+
+.errorMessage {
+  @include text(2xl);
+  @include font(bold);
+}
+
+.errorButton {
+  background-color: $red;
+  @include padding(5, x);
+  @include padding(3, y);
+  @include text(lg);
+  @include font(bold);
+  border-radius: space(1);
+}
+
+.errorButton:hover {
+  background-color: transparentize($red, 0.2);
+}
+
+.emptyWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include padding(8, x);
+}
+
+.emptyMessage {
+  @include font(bold);
+  @include text(2xl);
+}
+
+.emptyValue {
+  font-style: italic;
+  word-break: break-all;
+}

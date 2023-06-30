@@ -1,0 +1,111 @@
+@use 'sass:map';
+@use 'breakpoints' as *;
+@use 'spacing' as *;
+@use './../base' as *;
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin container {
+  @each $key, $size in $breakpoints {
+    @media (min-width: $size) {
+      max-width: $size;
+    }
+  }
+}
+
+@mixin padding($key, $side: 0) {
+  $size: map.get($spacing, $key);
+
+  @if $side == 0 {
+    padding: $size $size;
+  }
+
+  @if $side == 'x' {
+    padding-right: $size;
+    padding-left: $size;
+  }
+
+  @if $side == 'y' {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+
+  @if $side == 't' {
+    padding-top: $size;
+  }
+
+  @if $side == 'r' {
+    padding-right: $size;
+  }
+
+  @if $side == 'b' {
+    padding-bottom: $size;
+  }
+
+  @if $side == 'l' {
+    padding-left: $size;
+  }
+}
+
+@mixin margin($key, $side: 0) {
+  $size: map.get($spacing, $key);
+
+  @if $side == 0 {
+    margin: $size $size;
+  }
+
+  @if $side == 'x' {
+    margin-right: $size;
+    margin-left: $size;
+  }
+
+  @if $side == 'y' {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+
+  @if $side == 't' {
+    margin-top: $size;
+  }
+
+  @if $side == 'r' {
+    margin-right: $size;
+  }
+
+  @if $side == 'b' {
+    margin-bottom: $size;
+  }
+
+  @if $side == 'l' {
+    margin-left: $size;
+  }
+}
+
+@mixin gap($key) {
+  $size: map.get($spacing, $key);
+  gap: $size;
+}
+
+@mixin text($key) {
+  $size: map.get($font-sizes, $key);
+  $height: map.get($line-heights, $key);
+
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin font($key) {
+  $weight: map.get($font-weights, $key);
+
+  font-weight: $weight;
+}
+
+@mixin grid-cols($columns) {
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+}

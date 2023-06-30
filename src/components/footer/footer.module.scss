@@ -1,0 +1,24 @@
+@use './../../scss/abstracts/' as *;
+
+.footer {
+  display: flex;
+  background-color: $black;
+  flex-direction: column;
+  align-items: center;
+  @include padding(5, y);
+  @include gap(12);
+}
+
+.storesButtons {
+  display: flex;
+  flex-direction: column;
+  @include gap(6);
+
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.copyright {
+  @include text(sm);
+}

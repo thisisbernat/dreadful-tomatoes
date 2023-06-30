@@ -1,0 +1,8 @@
+@use './../../scss/abstracts/' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  min-height: 100vh;
+}

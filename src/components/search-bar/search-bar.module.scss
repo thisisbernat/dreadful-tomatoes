@@ -1,0 +1,35 @@
+@use './../../scss/abstracts/' as *;
+
+.box {
+  background-color: $red;
+}
+
+.inputWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.input {
+  color: $black;
+  @include padding(12, x);
+  @include padding(2, y);
+  @include margin(4);
+  @include text(lg);
+  width: 100%;
+  border-radius: space(1);
+
+  @include mq(md) {
+    @include margin(0, x);
+    @include padding(14, x);
+  }
+}
+
+.glass {
+  position: absolute;
+  left: space(7);
+
+  @include mq(md) {
+    left: space(5);
+  }
+}
